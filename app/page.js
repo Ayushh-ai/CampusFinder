@@ -1,0 +1,18 @@
+import Link from 'next/link';
+import CollegeCard from '@/components/CollegeCard';
+import HomeSearch from '@/components/HomeSearch';
+import { colleges, courses } from '@/data/colleges';
+import styles from './home.module.css';
+
+export const metadata = { title: 'Discover colleges', description: 'Find colleges, explore courses and compare your options with CampusFinder.' };
+
+export default function HomePage(){
+  const featured = [colleges[1], colleges[0], colleges[2]];
+  return <>
+    <section className={styles.hero}><div className={`container ${styles.heroInner}`}><div className={styles.heroCopy}><span className={styles.pill}><span/> YOUR NEXT CHAPTER STARTS HERE</span><h1>Find the college<br/>that feels <em>right.</em></h1><p>Explore institutions, discover courses and shortlist the places that match your ambitions.</p><HomeSearch/><div className={styles.heroFoot}><span>✓ Explore colleges across Maharashtra</span><span>✓ Save your favourites</span></div></div><div className={styles.heroVisual}><div className={styles.visualOrb}/><div className={styles.visualCard}><div className={styles.visualTop}><span>COLLEGE SPOTLIGHT</span><span>✦</span></div><div className={styles.visualBuilding}><div className={styles.buildingRoof}/><div className={styles.buildingMain}><div/><div/><div/><div/><div/><div/></div><div className={styles.buildingBase}/></div><div className={styles.visualInfo}><strong>Discover your possibilities</strong><span>Find a place to learn, grow and belong.</span></div></div><div className={styles.floatTag}><span>✦</span><div><b>12+ colleges</b><small>Ready to explore</small></div></div><div className={styles.floatDot}/></div></div></section>
+    <section className="container"><div className={styles.stats}><div><strong>12+</strong><span>Colleges to explore</span></div><div><strong>12</strong><span>Course categories</span></div><div><strong>4</strong><span>Popular cities</span></div><div><strong>100%</strong><span>Free to explore</span></div></div></section>
+    <section className="section container"><div className="sectionHead"><div><span className="eyebrow">A GOOD PLACE TO START</span><h2 className="sectionTitle">Popular colleges</h2><p className="sectionSub">Explore a few student favourites and discover what makes each one different.</p></div><Link href="/colleges" className="textLink">View all colleges ↗</Link></div><div className="cardGrid">{featured.map(college=><CollegeCard key={college.id} college={college}/>)}</div></section>
+    <section className={styles.courseSection}><div className="container"><div className="sectionHead"><div><span className="eyebrow">FIND YOUR DIRECTION</span><h2 className="sectionTitle">Explore by course</h2><p className="sectionSub">Start with the subject you want to pursue.</p></div></div><div className={styles.courseGrid}>{courses.slice(0,8).map((course,i)=><Link key={course} href={`/colleges?course=${encodeURIComponent(course)}`} className={styles.course}><span className={styles.courseIcon}>{['⌘','▦','◈','▤','◎','✳','∑','✎'][i]}</span><span><b>{course}</b><small>Explore colleges</small></span><span className={styles.courseArrow}>↗</span></Link>)}</div></div></section>
+    <section className={`container ${styles.cta}`}><div><span className="eyebrow">MAKE YOUR SHORTLIST</span><h2>Good decisions start<br/>with great discovery.</h2><p>Browse colleges, compare the details that matter and keep your favourites close.</p><Link href="/colleges" className="primaryButton">Explore colleges <span> →</span></Link></div><div className={styles.ctaArt}><div className={styles.ctaCircle}>CF</div><span>YOUR FUTURE, YOUR WAY</span></div></section>
+  </>;
+}

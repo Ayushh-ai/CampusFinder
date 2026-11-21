@@ -1,0 +1,11 @@
+.footer{background:#101d35;color:#d8e0ef;margin-top:90px;padding:48px 0 25px}
+.inner{display:grid;grid-template-columns:1fr auto;gap:25px}
+.brand{display:inline-flex;align-items:center;gap:10px;font-size:23px;font-weight:800;letter-spacing:-.7px;color:white}
+.brand img{width:48px;height:48px;object-fit:contain}
+.brand span span{color:#28b8b0}
+.identity p{color:#9eabc1;font-size:13px;margin:9px 0}
+.identity .tagline{color:#fff;font-size:13px;font-weight:700;letter-spacing:1.5px;margin:8px 0 4px}
+.links{display:flex;gap:24px;align-items:center}
+.links a{font-size:13px;color:#d8e0ef}
+.inner small{grid-column:1/-1;border-top:1px solid #2a3850;padding-top:20px;color:#8492aa;font-size:11px}
+@media(max-width:600px){.inner{grid-template-columns:1fr}.links{flex-wrap:wrap}.inner small{grid-column:auto}}

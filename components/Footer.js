@@ -1,0 +1,4 @@
+import Link from 'next/link';
+import Image from 'next/image';
+import styles from './Footer.module.css';
+export default function Footer(){return <footer className={styles.footer}><div className={`container ${styles.inner}`}><div className={styles.identity}><Link href="/" className={styles.brand}><Image src="/campusfinder-mark.png" alt="" width={48} height={48}/><span>Campus<span>Finder</span></span></Link><p className={styles.tagline}>CF — Your Future, Your Way</p><p>Explore colleges. Compare possibilities. Find your next step.</p></div><div className={styles.links}><Link href="/colleges">Explore colleges</Link><Link href="/wishlist">Your wishlist</Link><Link href="/">Home</Link></div><small>© {new Date().getFullYear()} CampusFinder. Demo project with illustrative college data.</small></div></footer>}
