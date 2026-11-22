@@ -1,137 +1,148 @@
-# CampusFinder
+CampusFinder – College Discovery Platform
 
-CampusFinder is a responsive college-discovery demo built with Next.js App Router, React, JavaScript and CSS Modules. Students can browse a sample college directory, search and filter colleges, view college detail pages, and save favourites to a browser wishlist.
+CampusFinder is a responsive college discovery website developed as part of the Frontend Development Internship Assessment (Track 2 – Next.js).
 
-## Features
+The platform helps students explore colleges, search by college name or city, filter available institutions, view college details, and save their favourite colleges to a wishlist.
 
-- Responsive homepage with navigation, hero search, featured colleges and course categories
-- College directory with keyword search, city and course filters, sorting, and Load More
-- Dynamic college detail routes at `/colleges/[slug]`
-- Wishlist add/remove functionality persisted in browser LocalStorage
-- Empty states and responsive mobile navigation
-- Local structured college dataset; no external API key is required
-- CampusFinder logo and the footer tagline: **CF — Your Future, Your Way**
+🌐 Live Demo
 
-## Technology
+Website: https://campusfinder-ayush.vercel.app
 
-- Next.js App Router
-- React functional components and Hooks
+GitHub Repository: https://github.com/Ayushh-ai/CampusFinder
+
+✨ Features
+
+- Responsive homepage with modern UI.
+- Browse available colleges.
+- Search colleges by name, city, or course.
+- Filter colleges by city and course.
+- Sort college listings.
+- Load more college results.
+- Individual college detail pages.
+- Add and remove colleges from wishlist.
+- Wishlist persistence using browser LocalStorage.
+- Responsive navigation for mobile devices.
+- Empty-state handling.
+
+🛠️ Technologies Used
+
+- Next.js (App Router)
+- React.js
 - JavaScript
 - CSS Modules
-- Local JavaScript dataset
-- Browser LocalStorage for wishlist persistence
+- HTML5
+- LocalStorage
+- Git and GitHub
+- Vercel
 
-## Requirements
+📸 Screenshots
+
+Screenshots of the application are available below.
+
+Homepage
+
+"CampusFinder Homepage" (screenshots/homepage.png)
+
+College Listing
+
+"College Listing" (screenshots/college-listing.png)
+
+College Details
+
+"College Details" (screenshots/college-detail.png)
+
+Wishlist
+
+"Wishlist" (screenshots/wishlist.png)
+
+📂 Project Structure
+
+CampusFinder/
+├── app/
+│   ├── colleges/
+│   ├── wishlist/
+│   ├── layout.js
+│   └── page.js
+├── components/
+├── data/
+├── lib/
+├── public/
+├── screenshots/
+├── .gitignore
+├── package.json
+└── README.md
+
+🚀 Getting Started
+
+Follow these steps to run the project locally.
+
+Prerequisites
 
 - Node.js 20.9 or later
 - npm
-- Git (for GitHub submission)
+- Git
 
-## Run locally
+1. Clone the repository
 
-1. Extract the project ZIP.
-2. Open the `campusfinder` folder in VS Code or a terminal.
-3. Install dependencies:
+git clone https://github.com/Ayushh-ai/CampusFinder.git
 
-   ```bash
-   npm install
-   ```
+2. Navigate to the project
 
-4. Start the development server:
+cd CampusFinder
 
-   ```bash
-   npm run dev
-   ```
+3. Install dependencies
 
-5. Open [http://localhost:3000](http://localhost:3000).
+npm install
 
-## Production build
+4. Start the development server
 
-Run the production build before deployment:
+npm run dev
 
-```bash
+5. Open the application
+
+Visit:
+
+http://localhost:3000
+
+🏗️ Production Build
+
+To create a production build:
+
 npm run build
-```
 
-If the build succeeds, you can test the production server locally:
+To run the production server:
 
-```bash
 npm start
-```
 
-## Project structure
+📊 Data Handling
 
-```text
-app/                    App Router pages and global styles
-  page.js               Homepage
-  colleges/page.js      College listing
-  colleges/[slug]/      Dynamic college detail pages
-  wishlist/             Wishlist page
-components/             Reusable header, footer, cards, search and filters
- data/colleges.js       Structured sample college dataset
-lib/wishlist-context.js Wishlist state and LocalStorage persistence
-public/                 Static logo assets
-```
+The application uses a structured local JavaScript dataset to display college information.
 
-## Data and rendering approach
+Search, filtering, sorting, and wishlist interactions are handled on the client side. Wishlist data is stored in browser LocalStorage so saved colleges remain available after refreshing the page on the same browser.
 
-The project uses a structured local JavaScript dataset in `data/colleges.js`. This is one of the data options permitted by the assignment and keeps the demonstration deterministic without depending on an external API. The homepage and college detail pages are rendered through the Next.js App Router. The listing page uses client-side state for search, filtering, sorting and Load More. Wishlist state is client-side because it depends on browser LocalStorage. Dynamic college pages use static route parameters and page metadata.
+☁️ Deployment
 
-## GitHub submission
+The application is deployed using Vercel and connected to the GitHub repository.
 
-Create an empty GitHub repository, then run these commands from the project folder (replace the URL with your own repository URL):
+Live URL: https://campusfinder-ayush.vercel.app
 
-```bash
-git init
-git add .
-git commit -m "Initial CampusFinder project"
-git branch -M main
-git remote add origin https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
-git push -u origin main
-```
+⚠️ Project Limitations
 
-Do not commit `.env` files, passwords, tokens or private keys.
+- College information uses illustrative sample data.
+- No external live college API is currently integrated.
+- Wishlist functionality uses browser LocalStorage.
+- No user authentication or cloud-based wishlist synchronization.
 
-## Vercel deployment
+Please verify official college fees, courses, and admission information with the respective institutions.
 
-1. Push the project to GitHub.
-2. Sign in at [Vercel](https://vercel.com/).
-3. Choose **Add New → Project** and import the CampusFinder GitHub repository.
-4. Confirm the framework is detected as **Next.js**.
-5. Keep the default build command (`npm run build`) and output settings.
-6. No environment variables are required for the current demo.
-7. Select **Deploy** and wait for the deployment to finish.
-8. Open the generated Vercel URL and test all main pages and interactions.
+👨‍💻 Developer
 
-## Screenshots for submission
+Ayush Bisne
 
-Capture and add these screenshots to a `screenshots/` folder in the GitHub repository:
+Frontend Development Internship Assessment – Track 2 (Next.js)
 
-- `homepage.png`
-- `college-listing.png`
-- `college-detail.png`
-- `wishlist.png`
+GitHub: https://github.com/Ayushh-ai
 
-Capture the screenshots from your own running/deployed application.
+---
 
-## Sample data notice and limitations
-
-- The dataset contains a limited set of demonstration colleges.
-- College summaries, fee ranges, ratings and review counts are illustrative sample content, not verified current admissions information.
-- There is no live college API, user account, server-side wishlist sync, or real review system.
-- College marks/logos may use text or placeholder visuals.
-- Verify official fees, courses, ratings and admission details directly with each institution before relying on them.
-
-## Final verification checklist
-
-- [ ] Homepage loads without errors
-- [ ] Search, city filter and course filter work
-- [ ] Sorting and Load More work
-- [ ] College cards open the correct detail page
-- [ ] Wishlist add/remove works and persists after refresh
-- [ ] Empty states display correctly
-- [ ] Desktop, tablet and mobile layouts are checked
-- [ ] `npm run build` completes successfully
-- [ ] GitHub repository and deployed Vercel URL are added to the submission
-- [ ] Four required screenshots are included
-"# CampusFinder" 
+CampusFinder – Your Future, Your Way.
